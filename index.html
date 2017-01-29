@@ -4,30 +4,63 @@
 	<meta name="description" content="Bringing you healthy hawiian food with a friendly atmosphere and great service.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-</head>
-<body ng-app="MainApp" ng-cloak>
+	<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' type='text/css'>
+	<link rel='stylesheet' href='/app/main.css' type='text/css'>
 	
-	<div ng-controller="MainCtrl" ng-cloak>
-		<md-toolbar class="md-hue-2">
-			<div class="md-toolbar-tools">
-				<h2>
-					<span>Kainoas Hawaiian Grill</span>
-				</h2>
-				<span flex></span>
-				<md-button class="md-icon-button" aria-label="Login" ng-click="tools.user.login()" ng-hide="user">
-					<md-icon><i class="fa fa-id-card-o"></i></md-icon>
-				</md-button>
-				<md-button aria-label="Account" ng-show="user">
-					{{user.displayName}}
-				</md-button>
+</head>
+<body ng-app="MainApp" ng-cloak layout="column" ng-controller="MainCtrl">
+	<md-toolbar class="md-hue-2">
+		<div class="md-toolbar-tools">
+			<h2>
+				<span>Kainoas</span>
+			</h2>
+			<!--<md-button class="md-raised" aria-label="Learn More">-->
+			<!--	KAHALE-->
+			<!--</md-button>-->
+			<!--<md-button class="md-raised" aria-label="Learn More">-->
+			<!--	MENU-->
+			<!--</md-button>-->
+			<!--<md-button class="md-raised" aria-label="Learn More">-->
+			<!--	MAP-->
+			<!--</md-button>-->
+			<span flex></span>
+			<md-button class="md-icon-button" aria-label="Login" ng-click="tools.user.login()" ng-hide="user">
+				<md-icon><i class="fa fa-id-card-o"></i></md-icon>
+			</md-button>
+			<md-button aria-label="Account" ng-show="user">
+				{{user.displayName}}
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-content layout="column">
+		<div class="flexbox-parent">
+			<div layout="row" layout-align="center center" style="min-height: 500px">
+				<div flex class="standout">Kainoas Hawaiian Grill</div>
 			</div>
-		</md-toolbar>
-		<md-content layout-margin>
-			<md-list>
-				<md-list-item ng-repeat="form in forms">{{form.settings.title}}</md-list-item>
-			</md-list>
-		</md-content>
-	</div>
+		</div>
+		<!--<div class="full">-->
+		<!--	<h1 class="standout">Kainoas Hawaiian Grill</h1>-->
+		<!--</div>-->
+		<div layout-margin>
+			<div layout="column" layout-gt-sm="row" layout-wrap>
+				<div flex="25" ng-repeat="category in data.categories | orderBy:'sequence'">
+					<div layout-padding ng-click="tools.category.focus($event, category)">
+						<md-toolbar>
+							<div class="md-toolbar-tools">
+								<h2>{{category.name}}</h2>
+							</div>
+						</md-toolbar>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div class="full">-->
+		<!--	<img src="//res.cloudinary.com/easybusiness/image/upload/w_1000,h_500,c_fill/v1485022778/atfiliate/d8qqgvqgcitrxyg2jslo.jpg">-->
+		<!--</div>-->
+		<!--<md-list>-->
+		<!--	<md-list-item>Some Content</md-list-item>-->
+		<!--</md-list>-->
+	</md-content>
 	
 	
 	<!-- Scripts -->
@@ -41,6 +74,6 @@
 	<script src="//www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
 	<script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 	<script src="//use.fontawesome.com/815a817077.js"></script>
-	<script src="/js/app.js"></script>
+	<script src="/app/main.js"></script>
 </body>
 </html>

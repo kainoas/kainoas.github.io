@@ -1,0 +1,41 @@
+<header>
+	<div class="account">
+		<span ng-hide="user">
+			<a href="#/apply">Apply</a> | 
+			<a ng-click="tools.user.login()">Signup</a> |
+			<a ng-click="tools.user.login()">Login</a>
+		</span>
+		<span ng-show="user">
+		<a href="#/user/profile" id="username" title="Manage Account">{{user.name}}</a> 
+	</span>
+	</div>
+	<h1 id="siteTitle">Kainoas Hawaiian Grill</h1>
+	<nav>
+		<ul>
+			<li>
+				<a href="#/" title="Home">
+					<i class="fa fa-home"></i> KAHALE
+					<span>Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="#/menu" title="Menu">
+					<i class="fa fa-cutlery"></i> WHAT'S TO EAT
+					<span>Menu</span>
+				</a>
+			</li>
+			<li>
+				<a href="#/map" title="Map">
+					<i class="fa fa-map-marker"></i> FROM YOUR KAHALE TO OURS
+					<span>Map</span>
+				</a>
+			</li>
+			<li ng-show="tools.user.is('Admin')">
+				<a href="#/admin" title="Admin">
+					<i class="fa fa-dashboard"></i> DASHBOARD
+					<span>Admin</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</header>

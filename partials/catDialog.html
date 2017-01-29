@@ -1,0 +1,45 @@
+<md-dialog aria-label="Menu Category" flex="90" flex-gt-md="60">
+	<form ng-cloak>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>{{category.name}}</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="cancel()">
+					<md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+
+		<md-dialog-content>
+			<div class="md-dialog-content">
+				<md-grid-list md-cols="2" md-cols-sm="3" md-cols-md="4" md-cols-gt-sm="6" md-row-height="1:1" md-gutter="8px" md-gutter-gt-md="4px">
+					<md-grid-tile md-colspan="1" md-rowspan="1" style="background:#EEE; overflow:hidden;" ng-repeat="product in products">
+						<md-grid-tile-header>
+							<h3>{{product.name}}</h3>
+						</md-grid-tile-header>
+						<img style="width:100%;" ng-src="{{product.picture.src}}">
+						<!--<img cl-src="{{d.img_url}}" transform_w="400" transform_h="400" style="width:100%;">-->
+						<!--<a target="_blank" href="{{d.secure_url}}" title="{{d.etag}}">-->
+						<!--</a>-->
+					</md-grid-tile>
+					<md-grid-tile md-colspan="1" md-rowspan="1" style="background:#DDD;" ng-click="js.folder.focus(f)" ng-show="user.is('admin')">
+						<h3>Add</h3>
+					</md-grid-tile>
+				</md-grid-list>
+			</div>
+		</md-dialog-content>
+
+		<!--<md-dialog-actions layout="row">-->
+		<!--	<md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>-->
+		<!--		More on Wikipedia-->
+		<!--	</md-button>-->
+		<!--	<span flex></span>-->
+		<!--	<md-button ng-click="answer('not useful')">-->
+		<!--		Not Useful-->
+		<!--	</md-button>-->
+		<!--	<md-button ng-click="answer('useful')">-->
+		<!--		Useful-->
+		<!--	</md-button>-->
+		<!--</md-dialog-actions>-->
+	</form>
+</md-dialog>
