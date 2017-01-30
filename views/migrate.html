@@ -1,0 +1,27 @@
+<div layout="column">
+	<div class="flexbox-parent">
+		<div layout="row" layout-align="center center" style="min-height: 500px">
+			<div flex class="standout">Kainoas Hawaiian Grill</div>
+		</div>
+	</div>
+	<div layout-margin>
+		<div layout-gt-sm="row" layout-wrap>
+			<div flex="100" flex-gt-sm="25" ng-repeat="category in data.categories | orderBy:'sequence'">
+				<div layout-padding>
+					<md-toolbar>
+						<div class="md-toolbar-tools">
+							<h2>{{category.name}}</h2>
+						</div>
+					</md-toolbar>
+					<md-content>
+						<md-list>
+							<md-list-item ng-repeat="item in tools.category.products(category)">
+								<span flex ng-click="tools.category.setImg(category, item.image.secure_url)">{{item.name}}</span> <img cl-src="{{item.image.secure_url}}" transform_h="50" transform_w="50">
+							</md-list-item>
+						</md-list>
+					</md-content>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

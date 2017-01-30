@@ -8,6 +8,7 @@ html,body{
 	background: linear-gradient(to bottom,  #5db7de 40%,#000000 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5db7de', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 	background-image: url('https://res.cloudinary.com/easybusiness/image/upload/w_1920,h_1080/v1485667985/atfiliate/itiqqcyeigvcfi2xirog.jpg');
+	/*background-image: url('http://files.parsetfss.com/194fc0cd-0846-4083-bad1-a174e70f595e/tfss-c7a07853-6ada-408c-8e2d-ba70e980fa4c-Building%20Photo.jpg');*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
@@ -31,6 +32,28 @@ html,body{
 	text-shadow: 0px 3px #99F;
 	/*margin-top: 30px;*/
 }
+.space{
+	margin: 15px;
+}
+
+.table {
+	width: 100%;
+}
+.table tr td, .table tr th{
+	padding: 15px 5px;
+}
+.table.table-hover tr th{
+	background: #EFEFEF;
+}
+.table.table-hover tr:hover td{
+	background: #EEE;
+}
+.table.table-striped{
+	background: #FFF;
+}
+.table.table-striped:nth-child(odd){
+	background: #CCC;
+}
 
 /*Overrides*/
 a{
@@ -39,6 +62,6 @@ a{
 [ng-click]{
 	cursor: pointer;
 }
-md-content{
+md-content.clear{
     background: none;
 }

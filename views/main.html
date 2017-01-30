@@ -1,0 +1,21 @@
+<div layout="column">
+	<div class="flexbox-parent">
+		<div layout="row" layout-align="center center" style="min-height: 500px">
+			<div flex class="standout">Kainoas Hawaiian Grill</div>
+		</div>
+	</div>
+	<div layout-margin>
+		<div layout-gt-sm="row" layout-wrap>
+			<div flex="100" flex-gt-sm="25" ng-repeat="category in data.categories | orderBy:'sequence'">
+				<div class="space" ng-click="tools.category.focus($event, category)">
+					<md-toolbar>
+						<div class="md-toolbar-tools">
+							<h2>{{category.name}}</h2>
+						</div>
+					</md-toolbar>
+					<img cl-src="{{category.img}}" style="width:100%" transform_w="400" transform_h="400">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

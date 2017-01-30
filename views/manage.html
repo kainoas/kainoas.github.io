@@ -1,0 +1,23 @@
+<div layout="column" layout-margin>
+	<div ng-repeat="category in data.categories | orderBy:'sequence'">
+		<div layout-padding>
+			<md-toolbar>
+				<div class="md-toolbar-tools">
+					<h2>{{category.name}}</h2>
+				</div>
+			</md-toolbar>
+			<md-content>
+				<table class='table'>
+					<tr ng-repeat="item in tools.category.products(category)">
+						<td><img cl-src="{{item.image.secure_url}}" transform_h="50" transform_w="50"></td>
+						<td contenteditable ng-model="item.name" placeholder="Untitled Item"></td>
+						<td contenteditable ng-model="item.price" placeholder="Item Price"></td>
+						<td contenteditable ng-model="item.description" placeholder="Item Description"></td>
+						<td>{{item.categories}}</td>
+						<td><md-button class="md-primary md-raised" ng-click="tools.product.save(item)">Save</md-button></td>
+					</tr>
+				</table>
+			</md-content>
+		</div>
+	</div>
+</div>
